@@ -11,7 +11,7 @@ setup_args = {
     'description': 'An extension for storing point clouds in an NWB file',
     'author': 'Ben Dichter',
     'author_email': 'ben.dichter@gmail.com',
-    'url': '',
+    'url': 'https://github.com/ben-dichter-consulting/ndx-point-cloud-table',
     'license': 'BSD 3-Clause',
     'install_requires': [
         'pynwb>=1.1.2'

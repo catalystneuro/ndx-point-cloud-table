@@ -8,7 +8,7 @@ from pynwb.spec import NWBNamespaceBuilder, export_spec, NWBGroupSpec, NWBAttrib
 
 
 def main():
-    # these arguments were auto-generated from your cookiecutter inputs
+    # these arguments were auto-generated from your cookie-cutter inputs
     ns_builder = NWBNamespaceBuilder(
         doc='An extension for storing point clouds in an NWB file',
         name='ndx-point-cloud-table',
@@ -17,31 +17,53 @@ def main():
         contact=list(map(str.strip, 'ben.dichter@gmail.com'.split(',')))
     )
 
-    # TODO: specify the neurodata_types that are used by the extension as well
-    # as in which namespace they are found
-    # this is similar to specifying the Python modules that need to be imported
-    # to use your new data types
-    ns_builder.include_type('ElectricalSeries', namespace='core')
-
-    # TODO: define your new data types
-    # see https://pynwb.readthedocs.io/en/latest/extensions.html#extending-nwb
-    # for more information
-    tetrode_series = NWBGroupSpec(
-        neurodata_type_def='TetrodeSeries',
-        neurodata_type_inc='ElectricalSeries',
-        doc=('An extension of ElectricalSeries to include the tetrode ID for '
-             'each time series.'),
-        attributes=[
-            NWBAttributeSpec(
-                name='trode_id',
-                doc='The tetrode ID.',
-                dtype='int32'
-            )
-        ],
+    PointCloudTable = NWBGroupSpec(
+        doc='type for storing time-varying 3D point clouds',
+        neurodata_type_def='PointCloudTable',
+        neurodata_type_inc='DynamicTable',
     )
 
-    # TODO: add all of your new data types to this list
-    new_data_types = [tetrode_series]
+    PointCloudTable.add_dataset(
+        name='point_cloud',
+        neurodata_type_inc='VectorData',
+        doc='datapoints locations over time',
+        dims=('time', '[x, y, z]'),
+        shape=(None, 3),
+        dtype='float',
+    )
+
+    PointCloudTable.add_dataset(
+        name='point_cloud_index',
+        neurodata_type_inc='VectorIndex',
+        doc='datapoints indices',
+        dims=('index',),
+        shape=(None,),
+    )
+
+    PointCloudTable.add_dataset(
+        name='color',
+        neurodata_type_inc='VectorData',
+        doc='datapoints color',
+        dims=('time', '[r, g, b]'),
+        shape=(None, 3),
+        dtype='float',
+        quantity='?'
+    )
+
+    PointCloudTable.add_dataset(
+        name='color_index',
+        neurodata_type_inc='VectorIndex',
+        doc='datapoints colors indices',
+        dims=('index',),
+        shape=(None,),
+        quantity='?'
+    )
+
+    new_data_types = [PointCloudTable]
+
+    ns_builder.include_type('DynamicTable', namespace='hdmf-common')
+    ns_builder.include_type('VectorData', namespace='hdmf-common')
+    ns_builder.include_type('VectorIndex', namespace='hdmf-common')
 
     # export the spec to yaml files in the spec folder
     output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'spec'))

@@ -1,11 +1,13 @@
 import os
-from pynwb import load_namespaces
+from pynwb import load_namespaces, get_class
 
+
+name = 'ndx-point-cloud-table'
 # Set path of the namespace.yaml file to the expected install location
 ndx_point_cloud_table_specpath = os.path.join(
     os.path.dirname(__file__),
     'spec',
-    'ndx-point-cloud-table.namespace.yaml'
+    name + '.namespace.yaml'
 )
 
 # If the extension has not been installed yet but we are running directly from
@@ -15,8 +17,10 @@ if not os.path.exists(ndx_point_cloud_table_specpath):
         os.path.dirname(__file__),
         '..', '..', '..',
         'spec',
-        'ndx-point-cloud-table.namespace.yaml'
+        name + '.namespace.yaml'
     ))
 
 # Load the namespace
 load_namespaces(ndx_point_cloud_table_specpath)
+
+PointCloudTable = get_class('PointCloudTable', name)

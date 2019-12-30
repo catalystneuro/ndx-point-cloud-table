@@ -6,8 +6,10 @@ namespaces:
   doc: An extension for storing point clouds in an NWB file
   name: ndx-point-cloud-table
   schema:
-  - namespace: core
+  - namespace: hdmf-common
     neurodata_types:
-    - ElectricalSeries
+    - DynamicTable
+    - VectorData
+    - VectorIndex
   - source: ndx-point-cloud-table.extensions.yaml
   version: 0.1.0

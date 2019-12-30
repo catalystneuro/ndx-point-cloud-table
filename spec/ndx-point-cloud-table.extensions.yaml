@@ -1,8 +1,41 @@
 groups:
-- neurodata_type_def: TetrodeSeries
-  neurodata_type_inc: ElectricalSeries
-  doc: An extension of ElectricalSeries to include the tetrode ID for each time series.
-  attributes:
-  - name: trode_id
-    dtype: int32
-    doc: The tetrode ID.
+- neurodata_type_def: PointCloudTable
+  neurodata_type_inc: DynamicTable
+  doc: type for storing time-varying 3D point clouds
+  datasets:
+  - name: point_cloud
+    neurodata_type_inc: VectorData
+    dtype: float
+    dims:
+    - time
+    - '[x, y, z]'
+    shape:
+    - null
+    - 3
+    doc: datapoints locations over time
+  - name: point_cloud_index
+    neurodata_type_inc: VectorIndex
+    dims:
+    - index
+    shape:
+    - null
+    doc: datapoints indices
+  - name: color
+    neurodata_type_inc: VectorData
+    dtype: float
+    dims:
+    - time
+    - '[r, g, b]'
+    shape:
+    - null
+    - 3
+    doc: datapoints color
+    quantity: '?'
+  - name: color_index
+    neurodata_type_inc: VectorIndex
+    dims:
+    - index
+    shape:
+    - null
+    doc: datapoints colors indices
+    quantity: '?'
