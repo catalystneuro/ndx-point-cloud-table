@@ -1,0 +1,13 @@
+namespaces:
+- author:
+  - Ben Dichter
+  contact:
+  - ben.dichter@gmail.com
+  doc: An extension for storing point clouds in an NWB file
+  name: ndx-point-cloud-table
+  schema:
+  - namespace: core
+    neurodata_types:
+    - ElectricalSeries
+  - source: ndx-point-cloud-table.extensions.yaml
+  version: 0.1.0
