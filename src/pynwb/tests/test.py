@@ -1,7 +1,9 @@
+import os
 from datetime import datetime
-from pynwb import NWBFile, NWBHDF5IO
-from hdmf.common.table import VectorIndex, VectorData, DynamicTable
+
+from hdmf.common.table import VectorIndex, VectorData
 from ndx_point_cloud_table import PointCloudTable
+from pynwb import NWBFile, NWBHDF5IO
 
 nwb = NWBFile('session_description', 'identifier', datetime.now().astimezone())
 
@@ -31,4 +33,4 @@ with NWBHDF5IO('test_pointcloudtable.nwb', 'r', load_namespaces=True) as io:
     print('after read')
     print(nwb2.processing['behavior'].data_interfaces)
 
-#os.remove('test_pointcloudtable.nwb')
+os.remove('test_pointcloudtable.nwb')
