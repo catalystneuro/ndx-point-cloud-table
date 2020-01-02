@@ -34,7 +34,7 @@ class PointCloudTable(DynamicTable):
 
     __columns__ = (
         {'name': 'point_cloud', 'description': 'datapoints locations over time', 'required': True, 'index': True},
-        {'name': 'timestamp', 'description': 'time of each frame in seconds', 'required': True, 'index': False},
+        {'name': 'timestamps', 'description': 'time of each frame in seconds', 'required': True, 'index': False},
         {'name': 'color', 'description': 'datapoints color', 'required': False, 'index': True}
     )
 

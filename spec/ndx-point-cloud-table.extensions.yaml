@@ -15,6 +15,14 @@ groups:
       order to the columns.
     required: false
   datasets:
+  - name: timestamps
+    data_type_inc: VectorData
+    dtype: float
+    dims:
+    - num_frames
+    shape:
+    - null
+    doc: time of each frame in seconds
   - name: point_cloud
     data_type_inc: VectorData
     dtype: float
@@ -32,13 +40,6 @@ groups:
     shape:
     - null
     doc: datapoints indices
-  - name: timestamps
-    dtype: numeric
-    dims:
-      - num_timepoints
-    shape:
-      - null
-    doc: time of each frame in seconds
   - name: color
     data_type_inc: VectorData
     dtype: float
