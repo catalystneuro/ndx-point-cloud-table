@@ -49,3 +49,5 @@ pcd = o3.geometry.PointCloud()
 pcd.points = o3.utility.Vector3dVector(xyz)
 o3.visualization.draw_geometries([pcd])
 ```
+
+![Example point cloud image](assets/point_cloud_image.png "Example point cloud image")
