@@ -26,7 +26,7 @@ ply_fpaths = glob(ply_dir + '/*.ply')
 
 nwb = NWBFile('session_description', 'identifier', datetime.now().astimezone())
 
-point_cloud_table = PointCloudTable(name='PointCloudTable', description='description')
+point_cloud_table = PointCloudTable()
 
 for fpath in tqdm(ply_fpaths):
     pcd = o3.io.read_point_cloud(fpath)

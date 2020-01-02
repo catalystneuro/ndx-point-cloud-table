@@ -24,6 +24,7 @@ def main():
         doc='type for storing time-varying 3D point clouds',
         data_type_def='PointCloudTable',
         data_type_inc='DynamicTable',
+        default_name='PointCloudTable'
     )
 
     PointCloudTable.add_dataset(

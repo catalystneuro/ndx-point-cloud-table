@@ -1,6 +1,7 @@
 groups:
 - data_type_def: PointCloudTable
   data_type_inc: DynamicTable
+  default_name: PointCloudTable
   doc: type for storing time-varying 3D point clouds
   attributes:
   - name: colnames

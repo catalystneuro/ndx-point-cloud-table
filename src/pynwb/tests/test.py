@@ -4,7 +4,7 @@ from ndx_point_cloud_table import PointCloudTable
 
 nwb = NWBFile('session_description', 'identifier', datetime.now().astimezone())
 
-point_cloud_table = PointCloudTable(name='test_name', description='description')
+point_cloud_table = PointCloudTable()
 
 point_cloud_table.add_row(point_cloud=[[1., 1., 1.], [2., 2., 2.]], timestamps=.4)
 
