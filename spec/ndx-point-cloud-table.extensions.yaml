@@ -1,10 +1,22 @@
 groups:
-- neurodata_type_def: PointCloudTable
-  neurodata_type_inc: DynamicTable
+- data_type_def: PointCloudTable
+  data_type_inc: DynamicTable
   doc: type for storing time-varying 3D point clouds
+  attributes:
+  - name: colnames
+    dtype: text
+    dims:
+    - num_columns
+    shape:
+    - null
+    default_value:
+    - point_cloud
+    doc: The names of the columns in this table. This should be used to specify an
+      order to the columns.
+    required: false
   datasets:
   - name: point_cloud
-    neurodata_type_inc: VectorData
+    data_type_inc: VectorData
     dtype: float
     dims:
     - time
@@ -14,14 +26,21 @@ groups:
     - 3
     doc: datapoints locations over time
   - name: point_cloud_index
-    neurodata_type_inc: VectorIndex
+    data_type_inc: VectorIndex
     dims:
     - index
     shape:
     - null
     doc: datapoints indices
+  - name: timestamps
+    dtype: numeric
+    dims:
+      - num_timepoints
+    shape:
+      - null
+    doc: time of each frame in seconds
   - name: color
-    neurodata_type_inc: VectorData
+    data_type_inc: VectorData
     dtype: float
     dims:
     - time
@@ -32,7 +51,7 @@ groups:
     doc: datapoints color
     quantity: '?'
   - name: color_index
-    neurodata_type_inc: VectorIndex
+    data_type_inc: VectorIndex
     dims:
     - index
     shape:
