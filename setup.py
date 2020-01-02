@@ -13,8 +13,7 @@ setup_args = {
     'author_email': 'ben.dichter@gmail.com',
     'url': 'https://github.com/ben-dichter-consulting/ndx-point-cloud-table',
     'license': 'BSD 3-Clause',
-    'install_requires': [
-    ],
+    'install_requires': ['open3d', 'pynwb'],
     'packages': find_packages('src/pynwb'),
     'package_dir': {'': 'src/pynwb'},
     'package_data': {'ndx_point_cloud_table': [
