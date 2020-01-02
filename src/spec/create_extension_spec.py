@@ -27,6 +27,14 @@ def main():
     )
 
     PointCloudTable.add_dataset(
+        name='timestamps',
+        data_type_inc='VectorData',
+        doc='time of each frame in seconds',
+        dims=('num_frames',),
+        shape=(None,),
+        dtype='float')
+
+    PointCloudTable.add_dataset(
         name='point_cloud',
         data_type_inc='VectorData',
         doc='datapoints locations over time',
