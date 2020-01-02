@@ -5,10 +5,15 @@ import os
 from setuptools import setup, find_packages
 from shutil import copy2
 
+with open('README.md', 'r') as fp:
+    readme = fp.read()
+
 setup_args = {
     'name': 'ndx-point-cloud-table',
     'version': '0.1.0',
     'description': 'An extension for storing point clouds in an NWB file',
+    'long_description': readme,
+    'long_description_content_type': 'text/markdown',
     'author': 'Ben Dichter',
     'author_email': 'ben.dichter@gmail.com',
     'url': 'https://github.com/ben-dichter-consulting/ndx-point-cloud-table',
