@@ -2,7 +2,8 @@
 
 import os.path
 
-from pynwb.spec import NamespaceBuilder, export_spec, GroupSpec, AttributeSpec
+from hdmf.spec import NamespaceBuilder, GroupSpec
+from hdmf.spec.write import export_spec
 
 
 def main():
