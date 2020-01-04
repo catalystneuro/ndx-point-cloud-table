@@ -11,6 +11,7 @@ pip install ndx-point-cloud-table
 ```python
 from datetime import datetime
 from glob import glob
+import os
 
 from tqdm import tqdm
 
@@ -20,17 +21,19 @@ from pynwb import NWBFile, NWBHDF5IO
 from ndx_point_cloud_table import PointCloudTable
 
 
-ply_dir = '/Users/bendichter/Downloads/Example'
+data_dir = '/Users/bendichter/data/Soltesz/Tilo/PointCloud/'
+ply_dir = os.path.join(data_dir, 'points')
 ply_fpaths = glob(ply_dir + '/*.ply')
+time_fpath = os.path.join(data_dir, 'frame_ts.txt')
 
-
+tt = np.genfromtxt(time_fpath, delimiter=" ", usecols=[1])
 nwb = NWBFile('session_description', 'identifier', datetime.now().astimezone())
 
-point_cloud_table = PointCloudTable()
+point_cloud_table = PointCloudTable(name='PointCloudTable', description='description')
 
-for fpath in tqdm(ply_fpaths):
+for fpath, t in tqdm(list(zip(ply_fpaths, tt))):
     pcd = o3.io.read_point_cloud(fpath)
-    point_cloud_table.add_row(point_cloud=np.asarray(pcd.points), timestamps=.4)
+    point_cloud_table.add_row(point_cloud=np.asarray(pcd.points), timestamps=t)
 
 behavior_mod = nwb.create_processing_module('behavior', 'desc')
 nwb.processing['behavior'].add(point_cloud_table)
