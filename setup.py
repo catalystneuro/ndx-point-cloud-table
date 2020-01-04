@@ -10,7 +10,7 @@ with open('README.md', 'r') as fp:
 
 setup_args = {
     'name': 'ndx-point-cloud-table',
-    'version': '0.1.0',
+    'version': '0.1.1',
     'description': 'An extension for storing point clouds in an NWB file',
     'long_description': readme,
     'long_description_content_type': 'text/markdown',
