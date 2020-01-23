@@ -4,7 +4,7 @@ Stores point cloud data in NWB. This can be used to track the shape of an animal
 
 `PointCloudTable` inherits from `DynamicTable`, and can store an entire session of point cloud data in 4 datasets
 
-![schematic of point cloud table](images/point_cloud_schematic.svg)
+![schematic of point cloud table](assets/point_cloud_schematic.svg)
 
 ## Installation
 
