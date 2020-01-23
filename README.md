@@ -1,5 +1,11 @@
 # ndx-point-cloud-table Extension for NWB
 
+Stores point cloud data in NWB. This can be used to track the shape of an animal over time.
+
+`PointCloudTable` inherits from `DynamicTable`, and can store an entire session of point cloud data in 4 datasets
+
+![schematic of point cloud table](images/point_cloud_schematic.svg)
+
 ## Installation
 
 ```shell script
