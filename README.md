@@ -5,7 +5,7 @@ Stores point cloud data in NWB. This can be used to track the shape of an animal
 `PointCloudTable` inherits from `DynamicTable`, and can store an entire session of point cloud data in 4 datasets
 
 <p align="center">
-<img src="assets/point_cloud_schematic.svg" width="500" align="middle">
+<img src="assets/point_cloud_schematic.svg" width="500">
 </p>
 
 
@@ -61,5 +61,6 @@ pcd = o3.geometry.PointCloud()
 pcd.points = o3.utility.Vector3dVector(xyz)
 o3.visualization.draw_geometries([pcd])
 ```
-
-![Example point cloud image](assets/point_cloud_image.png "Example point cloud image")
+<p align="center">
+<img src="assets/point_cloud_image.png" width="500")
+</p>
