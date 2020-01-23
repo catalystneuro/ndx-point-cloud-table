@@ -1,5 +1,14 @@
 # ndx-point-cloud-table Extension for NWB
 
+Stores point cloud data in NWB. This can be used to track the shape of an animal over time.
+
+`PointCloudTable` inherits from `DynamicTable`, and can store an entire session of point cloud data in 4 datasets
+
+<p align="center">
+<img src="assets/point_cloud_schematic.svg" width="500">
+</p>
+
+
 ## Installation
 
 ```shell script
@@ -21,7 +30,7 @@ from pynwb import NWBFile, NWBHDF5IO
 from ndx_point_cloud_table import PointCloudTable
 
 
-data_dir = '/Users/bendichter/data/Soltesz/Tilo/PointCloud/'
+data_dir = 'path/to/data/'
 ply_dir = os.path.join(data_dir, 'points')
 ply_fpaths = glob(ply_dir + '/*.ply')
 time_fpath = os.path.join(data_dir, 'frame_ts.txt')
@@ -52,5 +61,6 @@ pcd = o3.geometry.PointCloud()
 pcd.points = o3.utility.Vector3dVector(xyz)
 o3.visualization.draw_geometries([pcd])
 ```
-
-![Example point cloud image](assets/point_cloud_image.png "Example point cloud image")
+<p align="center">
+<img src="assets/point_cloud_image.png" width="500")
+</p>
