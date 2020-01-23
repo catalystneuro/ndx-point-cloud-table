@@ -30,7 +30,7 @@ from pynwb import NWBFile, NWBHDF5IO
 from ndx_point_cloud_table import PointCloudTable
 
 
-data_dir = '/Users/bendichter/data/Soltesz/Tilo/PointCloud/'
+data_dir = 'path/to/data/'
 ply_dir = os.path.join(data_dir, 'points')
 ply_fpaths = glob(ply_dir + '/*.ply')
 time_fpath = os.path.join(data_dir, 'frame_ts.txt')
