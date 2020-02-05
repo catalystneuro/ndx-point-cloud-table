@@ -1,14 +1,6 @@
-import os
-
-from hdmf.common import DynamicTable, register_class, register_map, load_namespaces
+from hdmf.common import DynamicTable, register_class, register_map
 from hdmf.common.io.table import DynamicTableMap
-from hdmf.utils import docval, getargs, popargs, call_docval_func, get_docval
-
-name = 'ndx-point-cloud-table'
-# Set path of the namespace.yaml file to the expected install location
-ndx_point_cloud_table_specpath = os.path.join(os.path.dirname(__file__), 'spec', name + '.namespace.yaml')
-
-load_namespaces(ndx_point_cloud_table_specpath)
+from hdmf.utils import docval, call_docval_func, get_docval
 
 
 @register_class('PointCloudTable', 'ndx-point-cloud-table')
@@ -34,5 +26,3 @@ class PointCloudTable(DynamicTable):
 @register_map(PointCloudTable)
 class PointCloudTableMap(DynamicTableMap):
     pass
-
-

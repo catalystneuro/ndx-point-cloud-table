@@ -1,7 +1,5 @@
 import os
 from hdmf.common import load_namespaces
-from .point_cloud_table import PointCloudTable
-
 
 name = 'ndx-point-cloud-table'
 
@@ -18,3 +16,5 @@ if not os.path.exists(ndx_point_cloud_table_specpath):
     ))
 # Load the namespace
 load_namespaces(ndx_point_cloud_table_specpath)
+
+from .point_cloud_table import PointCloudTable
