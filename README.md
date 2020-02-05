@@ -30,7 +30,7 @@ from pynwb import NWBFile, NWBHDF5IO
 from ndx_point_cloud_table import PointCloudTable
 
 
-data_dir = 'path/to/data/'
+data_dir = '/path/to/ply/'
 ply_dir = os.path.join(data_dir, 'points')
 ply_fpaths = glob(ply_dir + '/*.ply')
 time_fpath = os.path.join(data_dir, 'frame_ts.txt')
@@ -62,5 +62,5 @@ pcd.points = o3.utility.Vector3dVector(xyz)
 o3.visualization.draw_geometries([pcd])
 ```
 <p align="center">
-<img src="assets/point_cloud_image.png" width="500")
+<img src="assets/point_cloud_image.png" width="500">
 </p>
