@@ -1,6 +1,6 @@
 from datetime import datetime
-from pynwb import NWBFile, NWBHDF5IO
 from ndx_point_cloud_table import PointCloudTable
+from pynwb import NWBFile, NWBHDF5IO
 
 
 def test_io(tmpdir):
