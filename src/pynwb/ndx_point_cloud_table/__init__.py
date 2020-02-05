@@ -3,7 +3,7 @@ import os
 # Explicitly importing pynwb is required to ensure the global pynwb maps
 # are populated.
 # noinspection PyUnresolvedReferences
-import pynwb
+import pynwb  # noqa: F401
 
 from hdmf.common import load_namespaces
 
