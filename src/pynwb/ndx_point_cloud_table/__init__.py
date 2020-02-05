@@ -1,5 +1,10 @@
 import os
 
+# Explicitly importing pynwb is required to ensure the global pynwb maps
+# are populated.
+# noinspection PyUnresolvedReferences
+import pynwb
+
 from hdmf.common import load_namespaces
 
 name = 'ndx-point-cloud-table'
