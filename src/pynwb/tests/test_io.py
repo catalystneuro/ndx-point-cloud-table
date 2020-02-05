@@ -11,7 +11,7 @@ def test_io(tmpdir):
     point_cloud_table.add_row(point_cloud=[[1., 1., 1.], [2., 2., 2.]], timestamps=.4)
 
     behavior_mod = nwb.create_processing_module('behavior', 'desc')
-    nwb.processing['behavior'].add(point_cloud_table)
+    nwb.processing[behavior_mod.name].add(point_cloud_table)
 
     # Write nwb file
     with NWBHDF5IO(str(tmpdir.join('test_pointcloudtable.nwb')), 'w') as io:
@@ -19,4 +19,4 @@ def test_io(tmpdir):
 
     # Read nwb file and check its content
     with NWBHDF5IO(str(tmpdir.join('test_pointcloudtable.nwb')), 'r', load_namespaces=True) as io:
-        nwb2 = io.read()
+        io.read()
