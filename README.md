@@ -4,6 +4,12 @@ Stores point cloud data in NWB. This can be used to track the shape of an animal
 
 `PointCloudTable` inherits from `DynamicTable`, and can store an entire session of point cloud data in 4 datasets
 
+
+[![PyPI version](https://badge.fury.io/py/ndx-point-cloud-table.svg)](https://badge.fury.io/py/ndx-point-cloud-table)
+[![codecov](https://codecov.io/gh/catalystneuro/ndx-point-cloud-table/branch/master/graph/badge.svg)](https://codecov.io/gh/catalystneuro/ndx-point-cloud-table)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+
 <p align="center">
 <img src="assets/point_cloud_schematic.svg" width="500">
 </p>
